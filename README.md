@@ -1,10 +1,28 @@
 # Python pipeline from scratch
 
-Учебный проект, который развивается последовательно от HTTP-запроса к готовой системе. Сейчас реализован только урок 1: программа скачивает HTML главной страницы [Books to Scrape](https://books.toscrape.com/).
+Цель проекта — шаг за шагом научиться создавать Python-приложение и понимать инструменты вокруг него. Каждый урок продолжает один и тот же проект. Сейчас реализован только первый урок: программа получает HTML учебного сайта [Books to Scrape](https://books.toscrape.com/).
 
-Полное объяснение и инструкции для Windows, Linux и macOS: [урок 1 — HTTP и Requests](docs/lessons/01-http-requests.md).
+**Начните с [урока 1: Python, Git, HTTP и Requests](docs/lessons/01-http-requests.md)** — в нём есть создание проекта с нуля, объяснение кода и задания.
 
-Для быстрого запуска из корня проекта (Linux/macOS):
+## Программа обучения
+
+1. Python, Git, HTTP и Requests — скачивание HTML.
+2. BeautifulSoup и извлечение данных.
+3. Docker.
+4. S3 (MinIO).
+5. OpenSearch.
+6. FastAPI и веб-интерфейс.
+7. Docker Compose и объединение системы.
+
+Последующие этапы пока не реализованы.
+
+## Что понадобится
+
+Python 3, Git, редактор текста, терминал и интернет для установки Requests и запроса к сайту. Проверка установки и инструкции для Windows, Linux и macOS приведены в уроке.
+
+## Быстрый запуск готового проекта
+
+В терминале из корня репозитория на Linux/macOS:
 
 ```bash
 python3 -m venv .venv
@@ -13,4 +31,17 @@ python -m pip install -r requirements.txt
 python src/main.py
 ```
 
-Результат появится в `data/raw/books.html`. Для запуска нужен Python 3 и доступ в интернет.
+В PowerShell на Windows:
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python src/main.py
+```
+
+Результат — `data/raw/books.html`. Если PowerShell не разрешает активацию, используйте способ без активации из урока.
+
+## Учимся по истории
+
+`git log --oneline` показывает коммиты проекта от новых к старым. Изучайте изменения командой `git show <хеш>`; как безопасно открыть старый снимок в отдельной папке, объясняется в [разделе о Git](docs/lessons/01-http-requests.md#часть-3-git-на-практике). Скачанные данные и виртуальное окружение в историю не входят.
