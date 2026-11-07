@@ -1,24 +1,24 @@
 # Python pipeline from scratch
 
-Цель проекта — шаг за шагом научиться создавать Python-приложение и понимать инструменты вокруг него. Каждый урок продолжает один и тот же проект. Сейчас реализован только первый урок: программа получает HTML учебного сайта [Books to Scrape](https://books.toscrape.com/).
+Цель проекта — шаг за шагом научиться создавать Python-приложение и понимать инструменты вокруг него. Каждый урок продолжает один и тот же проект. Сейчас программа скачивает HTML учебного сайта [Books to Scrape](https://books.toscrape.com/) и извлекает из него данные книг в JSON.
 
-**Начните с [урока 1: Python, Git, HTTP и Requests](docs/lessons/01-http-requests.md)** — в нём есть создание проекта с нуля, объяснение кода и задания.
+**Начните с [урока 1: Python, Git, HTTP и Requests](docs/lessons/01-http-requests.md)** — создание проекта с нуля и получение HTML. Продолжите [уроком 2: BeautifulSoup и JSON](docs/lessons/02-beautifulsoup.md) — поиск элементов и сохранение структурированных данных.
 
 ## Программа обучения
 
-1. Python, Git, HTTP и Requests — скачивание HTML.
-2. BeautifulSoup и извлечение данных.
+1. Python, Git, HTTP и Requests — скачивание HTML (реализован).
+2. BeautifulSoup и извлечение данных — JSON (реализован).
 3. Docker.
 4. S3 (MinIO).
 5. OpenSearch.
 6. FastAPI и веб-интерфейс.
 7. Docker Compose и объединение системы.
 
-Последующие этапы пока не реализованы.
+Последующие пять этапов пока не реализованы.
 
 ## Что понадобится
 
-Python 3, Git, редактор текста, терминал и интернет для установки Requests и запроса к сайту. Проверка установки и инструкции для Windows, Linux и macOS приведены в уроке.
+Python 3, Git, редактор текста, терминал и интернет для установки зависимостей и загрузки страницы. Проверка установки и инструкции для Windows, Linux и macOS приведены в уроках. Парсер после установки работает с сохранённым HTML без интернета.
 
 ## Быстрый запуск готового проекта
 
@@ -29,6 +29,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python src/main.py
+python src/parse_books.py
 ```
 
 В PowerShell на Windows:
@@ -38,9 +39,10 @@ py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 python src/main.py
+python src/parse_books.py
 ```
 
-Результат — `data/raw/books.html`. Если PowerShell не разрешает активацию, используйте способ без активации из урока.
+Первый этап сохраняет исходную страницу в `data/raw/books.html`, второй — список книг в `data/processed/books.json`. При повторном запуске файлы обновляются. Если PowerShell не разрешает активацию, используйте способ без активации из первого урока.
 
 ## Учимся по истории
 
